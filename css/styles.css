@@ -566,6 +566,9 @@ main div .article-contacto iframe {
 }
 
           /* CARRITO  */
+        #trashIcon{
+          margin-top: 1rem;
+        }
           .cart-header {
             font-weight: bold;
             font-size: 1.25em;

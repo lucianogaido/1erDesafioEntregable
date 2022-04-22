@@ -143,3 +143,15 @@ function vaciarCarrito() {
 };
 const vaciar = document.getElementById("vaciarCarrito");
 vaciar.addEventListener("click", vaciarCarrito);
+
+//      BUSCADOR 
+
+function buscador() {
+    const nombreProductoBuscado = document.getElementById('productoBuscado').value.toUpperCase().trim();
+    const productosEncontrados = productos.filter((producto) => {
+        return producto.titulo.toUpperCase().match(nombreProductoBuscado);
+    });
+        document.getElementById("cards").innerHTML = `<div class="col-lg-12"><h2>Resultados que coinciden con "${nombreProductoBuscado}"</h2></div>`;
+        generarCards(productosEncontrados);
+    
+};

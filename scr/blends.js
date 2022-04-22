@@ -45,6 +45,9 @@ function cardsEnCarrito(productosCarrito) {
     productosCarrito.forEach((elemento) => {
         acumuladorProductosCarrito += `
         <div class="cart-items">
+        <button onclick="removerUnProducto(${elemento.id})" type="button" class="close "  aria-label="Close">
+        <i id="trashIcon" class="fa-solid fa-trash-can"></i>
+        </button>
             <div class="cart-row">
                 <div class="cart-item cart-column">
                 <img src="${(elemento.img === "")? '../assets/Nuna.png' : elemento.img}" alt="Imagen producto ${elemento.titulo}" width="100" height="100">
@@ -55,7 +58,6 @@ function cardsEnCarrito(productosCarrito) {
                     <button type="button" onclick="restarUno(${elemento.id})" class="badge btn btn-warning ms-1 rounded-pill">${(elemento.cantidad > 1) ? '-' : '<i class="fa-solid fa-trash-can"></i>'}</button>
                     <input class="cart-quantity-input" id="cant-${elemento.id}" value= "${elemento.cantidad}">
                     <button type="button" onclick="agregarUno(${elemento.id})" class="badge btn btn-warning ms-1 rounded-pill">+</button>
-                    <button onclick="removerUnProducto(${elemento.id})" class="btn btn-danger" type="button"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
         </div>
@@ -69,20 +71,6 @@ function mostrarProductosCarrito(cards) {
 }
 
 cardsEnCarrito(carrito);
-
-
-//      BUSCADOR 
-
-function buscador() {
-    const nombreProductoBuscado = document.getElementById('productoBuscado').value.toUpperCase().trim();
-    const productosEncontrados = productos.filter((producto) => {
-        return producto.titulo.toUpperCase().match(nombreProductoBuscado);
-    });
-    if (nombreProductoBuscado != '') {
-        document.getElementById("cards").innerHTML = `<div class="col-lg-12"><h2>Resultados que coinciden con "${nombreProductoBuscado}"</h2></div>`;
-        generarCards(productosEncontrados);
-    }
-};
 //*************************************************************************************************************************************                                                 F U N C I O N E S *************************************************************************************************************************************
 
 const agregarAlCarrito = (idProducto) => {

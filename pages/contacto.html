@@ -60,12 +60,6 @@
             <a class="nav-link" href="#">Contacto</a>
           </li>
         </ul>
-        <form action="#" class="form-inline my-2 my-lg-0">
-          <input id='productoBuscado' class="form-control mr-sm-2" type="search" placeholder="Buscar"
-            aria-label="Search">
-          <button onclick="buscador()" class="btn btn-outline-dark my-2 my-sm-0 bg-warning"
-            type="submit">Buscar</button>
-        </form>
         <!-- BOTON CARRITO   -->
         <form class="d-flex">
           <button type="button" class="btn btn-outline-dark my-2 my-sm-0 bg-warning" data-toggle="modal"
@@ -124,25 +118,25 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nombre</label>
-              <input type="text" class="form-control" id="inputEmail4">
+              <input type="text" id="nombre" oninput="validarInput(event)" class="form-control" id="inputEmail4">
             </div>
             <div class="form-group col-md-6">
               <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputPassword4">
+              <input id="email"type="email" oninput="validarInput(event)" class="form-control" id="inputPassword4">
             </div>
           </div>
           <div class="form-group">
             <label for="inputAddress">Telefono</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder=11...>
+            <input type="text" oninput="validarInput(event)" class="form-control"  placeholder=11...>
           </div>
           <div class="form-group">
             <label for="inputAddress2">Barrio</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Localidad, Barrio">
+            <input type="text" oninput="validarInput(event)" class="form-control" id="inputAddress2" placeholder="Localidad, Barrio">
           </div>
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="inputCity">Dejanos tu Consulta</label>
-              <input type="text" class="form-control" id="inputCity">
+              <input id="consulta" type="text" oninput="validarInput(event)" class="form-control" id="inputCity">
             </div>
 
             <div class="form-group">
@@ -153,9 +147,10 @@
                 </label>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
       </article>
+      <button onclick="formulario()" id="botonEnviar" type="submit" class="btn btn-primary">Enviar</button>
+
       <article class="article-contacto col-xs-12 col-sm-12 col-lg-6">
 
         <iframe

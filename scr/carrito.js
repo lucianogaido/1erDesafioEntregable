@@ -32,7 +32,7 @@ function validarStorageCantidad() {
     }
 };
 
-
+//                                          FUNCIONES                                     
 //  remover del carrito
 
 function removerUnProducto(idProducto) {
